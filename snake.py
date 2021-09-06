@@ -22,13 +22,13 @@ font = pygame.font.SysFont('arial.ttf', 35)
 
 
 #background image
-bgimg = pygame.image.load("welcome.jpg")
+bgimg = pygame.image.load("D:\snake game\Background\welcome.jpg")
 bgimg = pygame.transform.scale(bgimg,(screen_width,screen_height)).convert_alpha()
 
-bgimg1 = pygame.image.load("play.jpg")
+bgimg1 = pygame.image.load("D:\snake game\Background\play.jpg")
 bgimg1 = pygame.transform.scale(bgimg1,(screen_width,screen_height)).convert_alpha()
 
-bgimg2 = pygame.image.load("exit.jpg")
+bgimg2 = pygame.image.load("D:\snake game\Background\exit.jpg")
 bgimg2 = pygame.transform.scale(bgimg2,(screen_width,screen_height)).convert_alpha()
 
 #game title
@@ -49,7 +49,7 @@ def plot_snake(gamewindow, color, snk_list,snake_size):
 #welcome screen
 
 def welcome():
-    pygame.mixer.music.load('start.mpeg')
+    pygame.mixer.music.load('D:\snake game\music\start.mpeg')
     pygame.mixer.music.play()
     exit_game = False
     while not exit_game:
@@ -63,7 +63,7 @@ def welcome():
                 exit_game = True
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    pygame.mixer.music.load('back.mpeg')
+                    pygame.mixer.music.load('D:\snake game\music/back.mpeg')
                     pygame.mixer.music.play()
                     gameloop()
 
@@ -161,12 +161,12 @@ def gameloop():
 
             if head in snk_list[:-1]:
                 game_over=True
-                pygame.mixer.music.load('end.mpeg')
+                pygame.mixer.music.load('D:\snake game\music\end.mpeg')
                 pygame.mixer.music.play()
 
             if snake_x<0 or snake_x>screen_width or snake_y<0 or snake_y>screen_height:
                 game_over = True
-                pygame.mixer.music.load('end.mpeg')
+                pygame.mixer.music.load('D:\snake game\music\end.mpeg')
                 pygame.mixer.music.play()
             plot_snake(gamewindow, yellow, snk_list, snake_size)
         pygame.display.update()
